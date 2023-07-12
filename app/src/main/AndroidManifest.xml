@@ -14,9 +14,13 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
+            android:name=".TabLayoutMainActivity"
+            android:exported="false"
+            android:label="Tab Layout"/>
+        <activity
             android:name=".ImplicitIntentMainActivity"
             android:exported="false"
-            android:label="Implicit Intent"/>
+            android:label="Implicit Intent" />
         <activity
             android:name=".CuacaMainActivity"
             android:exported="false"
