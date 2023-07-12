@@ -9,8 +9,8 @@ import android.widget.Button;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private Button _tampilMahasiswaButton, _tampilForexButton, _tampilCuacaButton;
-    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent;
+    private Button _tampilMahasiswaButton, _tampilForexButton, _tampilCuacaButton, _tampilImplicitButton;
+    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent, _tampilImplicitIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,12 @@ public class MenuActivity extends AppCompatActivity {
         initTampilMahasiswaButton();
         initTampilForexButton();
         initTampilCuacaButton();
+        initTampilImplicitButton();
+
+        Bundle bundle = getIntent().getExtras();
+        String activityTitle = bundle.getString("username");
+
+        this.setTitle("Menu - " + activityTitle);
     }
 
     private void initTampilMahasiswaButton() {
@@ -55,6 +61,19 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 _tampilCuacaIntent = new Intent(getApplicationContext(), CuacaMainActivity.class);
                 startActivity(_tampilCuacaIntent);
+            }
+        });
+    }
+
+    private void initTampilImplicitButton()
+    {
+        _tampilImplicitButton = findViewById(R.id.tampilImplicitButton);
+
+        _tampilImplicitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _tampilImplicitIntent = new Intent(getApplicationContext(), ImplicitIntentMainActivity.class);
+                startActivity(_tampilImplicitIntent);
             }
         });
     }

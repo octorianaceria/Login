@@ -55,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Selamat datang, " + _id, Toast.LENGTH_SHORT).show();
 
                         _menuIntent = new Intent(getApplicationContext(), MenuActivity.class);
+
+                        Bundle bundle = new Bundle();
+                        bundle.putString("username", _id);
+                        _menuIntent.putExtras(bundle);
+
                         startActivity(_menuIntent);
                     }
 
