@@ -41,6 +41,7 @@ public class ForexMainActivity extends AppCompatActivity {
 
         initSwipeRefreshLayout();
         initForex();
+
     }
     private void initSwipeRefreshLayout() {
         swipeRefreshLayout1.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

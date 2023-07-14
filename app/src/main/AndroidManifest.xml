@@ -14,9 +14,12 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
+            android:name=".HotelMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".TabLayoutMainActivity"
             android:exported="false"
-            android:label="Tab Layout"/>
+            android:label="Tab Layout" />
         <activity
             android:name=".ImplicitIntentMainActivity"
             android:exported="false"
@@ -27,10 +30,12 @@
             android:label="Cuaca Pontianak" />
         <activity
             android:name=".ForexMainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Forex" />
         <activity
             android:name=".TampilMahasiswaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Tampil Mahasiswa" />
         <activity
             android:name=".TambahMahasiswaActivity"
             android:exported="false" />
