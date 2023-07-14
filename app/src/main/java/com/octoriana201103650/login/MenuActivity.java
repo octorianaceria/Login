@@ -9,8 +9,8 @@ import android.widget.Button;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private Button _tampilMahasiswaButton, _tampilForexButton, _tampilCuacaButton, _tampilImplicitButton, _tampilTabLayoutButton;
-    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent, _tampilImplicitIntent, _tampilTabLayoutIntent;
+    private Button _tampilMahasiswaButton, _tampilForexButton, _tampilCuacaButton, _tampilImplicitButton, _tampilTabLayoutButton, _tampilHotelButton, _tampilWebViewButton;
+    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent, _tampilImplicitIntent, _tampilTabLayoutIntent, _tampilHotelIntent, _tampilWebViewIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,8 @@ public class MenuActivity extends AppCompatActivity {
         initTampilCuacaButton();
         initTampilImplicitButton();
         initTampilTabLayoutButton();
+        initTampilHotelButton();
+        initTampilWebViewButton();
 
         Bundle bundle = getIntent().getExtras();
         String activityTitle = bundle.getString("username");
@@ -88,6 +90,32 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 _tampilTabLayoutIntent = new Intent(getApplicationContext(), TabLayoutMainActivity.class);
                 startActivity(_tampilTabLayoutIntent);
+            }
+        });
+    }
+
+    private void initTampilHotelButton()
+    {
+        _tampilHotelButton = findViewById(R.id.tampilHotelButton);
+
+        _tampilHotelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _tampilHotelIntent = new Intent(getApplicationContext(), HotelMainActivity.class);
+                startActivity(_tampilHotelIntent);
+            }
+        });
+    }
+
+    private void initTampilWebViewButton()
+    {
+        _tampilWebViewButton = findViewById(R.id.tampilWebViewButton);
+
+        _tampilWebViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _tampilWebViewIntent = new Intent(getApplicationContext(), WebMainActivity.class);
+                startActivity(_tampilWebViewIntent);
             }
         });
     }
